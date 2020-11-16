@@ -1,0 +1,58 @@
+@use '../../../styles/variables.scss';
+
+.sidebar{
+  width: 25%;
+  height: 100%;
+  border-right: variables.$border-size solid variables.$border-color;
+
+  overflow: auto;
+}
+
+.sidebar__createNote{
+  color: rgb(98,117,133);
+  justify-content: center;
+}
+.sidebar__newNote{
+  margin-top: 6px;
+  font-size: 1em;
+  text-align: center;
+}
+.sidebar__plus{
+  font-size: 2.5em;
+}
+
+.sidebar__titleContainer{
+  border-bottom: variables.$border-size  solid variables.$border-color;
+  height: 50px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+.sidebar__titleContainer:active{
+  font-size:0.95em;
+  box-shadow: 2px;
+ }
+
+.sidebar__title{
+  margin: 0 1em;
+
+  overflow: hidden;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+
+  position: relative;
+  z-index: 1;
+ }
+
+ .sidebar__title_selected{
+   width: 10px;
+   min-width: 10px;
+   height: 100%;
+   background-color: palevioletred;
+   position: absolute;
+   left: 0px;
+
+ }

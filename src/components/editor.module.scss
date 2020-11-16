@@ -1,0 +1,17 @@
+@use '../../styles/variables.scss';
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.editor{
+  margin: 1em;
+  width: 90vw;
+  max-width: 1200px;
+  height: 90vh;
+  border: variables.$border-size solid variables.$border-color;
+
+  display: flex;
+  
+}

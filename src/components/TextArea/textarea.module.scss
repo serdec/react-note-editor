@@ -1,0 +1,24 @@
+@use '../../../styles/variables.scss';
+
+.textarea{
+    width: 75%;
+    height: 100%;
+    border: none;
+    border-right: variables.$border-size solid variables.$border-color;
+  
+    overflow: auto;
+}
+
+.textarea__textContainer{
+  padding: 1.5em;
+  width:100%;
+  height: 99%;
+  border: none;
+  resize: none;
+
+  font-size: 1.5em;
+
+}
+.textarea__textContainer:focus{
+  outline: none;
+}
