@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { array, number, func } from 'prop-types';
 import styles from './sidebar.module.scss';
+import Sidebar__CreateNote from './__CreateNote/sidebar__create-note';
+import Sidebar__Notes from './__Notes/sidebar__notes';
 
-const noop = () => {};
+const noop = () => { };
 const Sidebar = ({
   notes = [],
   selectedNoteId = 1,
@@ -23,29 +25,12 @@ const Sidebar = ({
 
   return (
     <div className={styles.sidebar}>
-      <div
-        className={`${styles.sidebar__createNote} ${styles.sidebar__titleContainer}`}
-        onClick={createNote}
-      >
-        <span className={styles.sidebar__plus}>+</span>
-        <span className={styles.sidebar__newNote}>New Note</span>
-      </div>
-      {sidebarNotes.map((note) => {
-        const classSelected =
-          selectedNote === note.id ? styles.sidebar__title_selected : '';
-        return (
-          <div
-            key={note.id}
-            onClick={() => {
-              handleClick(note.id);
-            }}
-            className={`${styles.sidebar__titleContainer}`}
-          >
-            <div className={classSelected}></div>
-            <div className={styles.sidebar__title}>{note.title}</div>
-          </div>
-        );
-      })}
+      <Sidebar__CreateNote createNote={createNote} />
+      <Sidebar__Notes
+        notes={sidebarNotes}
+        handleClick={handleClick}
+        selectedNote={selectedNote}
+      />
     </div>
   );
 };
